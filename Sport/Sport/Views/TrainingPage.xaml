@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sport.Views.TrainingPage"
+             Shell.PresentationMode="NotAnimated"
+             xmlns:vm="clr-namespace:Sport.ViewModels"
+             Title="{Binding Title}"
+             Shell.NavBarIsVisible="False">
+
+    <StackLayout Padding="15">
+        <StackLayout.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#fefeff"
+                          Offset="0.1" />
+                <GradientStop Color="#000000"
+                          Offset="0.5" />
+            </LinearGradientBrush>
+        </StackLayout.Background>
+        <Frame BackgroundColor="Transparent"/>
+        <Image Margin="10,-50,0,10" HeightRequest="100"  Source="SplashScreen.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsAnimationPlaying="True"/>
+
+        <StackLayout Orientation="Horizontal" Margin="-2,0,-110,20">
+            <Label Text="Training" FontFamily="Bahila" TextTransform="Uppercase" TextDecorations="None" FontSize="35" FontAttributes="Bold" TextColor="Black"  HorizontalOptions="StartAndExpand"  VerticalOptions="Center" />
+            <Button Text="Logout"   BorderWidth="2" CornerRadius="10" HeightRequest="40"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor="#e31212" Clicked="Logout_Click"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
+            <Label Text="{Binding Date}"  Margin="0,6,0,0" TextTransform="Uppercase" FontSize="23" FontAttributes="Bold" TextColor="Black"  HorizontalOptions="StartAndExpand"/>
+            <Button Text="History" FontSize="Medium" BorderWidth="2" HeightRequest="40" CornerRadius="10" BackgroundColor="#139A43" Command="{Binding HistoryCommand}"/>
+        </StackLayout>
+        <Frame Margin="0,0,0,0">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="{Binding TextDay}" TextColor="Black"  FontSize="Large" VerticalOptions="CenterAndExpand" TextDecorations="None"/>
+                <Button Text="start" Command="{Binding WorkTrainingDay}" FontSize="Medium" CornerRadius="5" BackgroundColor="#139A43" BorderColor = "#fefeff" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <Frame.Background>
+                <LinearGradientBrush EndPoint="0,0.5">
+                    <GradientStop Color="#CAC4CE" Offset="0"/>
+                    <GradientStop Color="#053B06" Offset="44" />
+                </LinearGradientBrush>
+            </Frame.Background>
+        </Frame>
+        <StackLayout Margin="15">
+            <Label Text="Forecast of the month" HorizontalTextAlignment="Center" FontSize="Large" />
+            <ScrollView >
+                <StackLayout x:Name="StackDayTraining" ></StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

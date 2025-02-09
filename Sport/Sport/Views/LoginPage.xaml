@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sport.Views.LoginPage"
+             NavigationPage.HasNavigationBar="True"
+             BackgroundColor="#139A43">
+
+    <ContentPage.Resources >
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="PlaceholderColor" Value="Black" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0,10,0,10" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#0B5D1E" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HeightRequest" Value="45" />
+            <Setter Property="Margin" Value="0,20,0,0" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content >
+        <StackLayout  Padding="15,0,15,0" Margin="10,0,0,200" VerticalOptions="Center">
+            <Image Margin="0,0,0,20" HeightRequest="100"  Source="SplashScreen.png"  IsAnimationPlaying="True"/>
+            <Label Text="Sign In"
+                   FontSize="Large"/>
+            <Entry Placeholder="Enter your email" x:Name="Temail" ></Entry>
+            <Entry Placeholder="Enter password"
+                   IsPassword="True"
+                   x:Name="Tpass"/>
+            <Button Text="Sign In"
+                    x:Name="BtnSignIn"
+                    Clicked="BtnSignIn_Clicked"></Button>
+
+            <Grid Margin="0,30,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Register"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       x:Name="LblRegister"
+                       >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="RegisterTap"
+                                              Tapped="RegisterTap_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Forgot"
+                       Grid.Row="0"
+                       Grid.Column="1">
+                   
+                </Label>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
